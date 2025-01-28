@@ -1,74 +1,73 @@
 <template>
-  <section class="py-12 bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-12">
-      <!-- Section Title -->
-      <div class="text-center mb-12">
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white">My Projects</h1>
-        <p class="mt-2 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Explore the work I've done in web and mobile applications.
-        </p>
-      </div>
-
-      <!-- Tabs -->
-      <div class="flex justify-center space-x-4 mb-8">
-        <button
-          v-for="tab in tabs"
-          :key="tab.id"
-          class="px-6 py-2 rounded-lg font-semibold transition-colors focus:outline-none"
-          :class="{
-            'bg-indigo-500 text-white': activeTab === tab.id,
-            'bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700': activeTab !== tab.id
-          }"
-          @click="activeTab = tab.id"
-        >
-          {{ tab.label }}
-        </button>
-      </div>
-
-      <!-- Project Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          v-for="(project, i) in filteredProjects"
-          :key="i"
-          class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow cursor-pointer"
-          @click="navigateToDetail(project)"
-        >
-          <!-- Project Image -->
-          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-            <img
-              :src="project.logo"
-              :alt="`${project.name} Logo`"
-              class="h-full w-full object-contain object-center p-4"
-            />
-          </div>
-
-          <!-- Project Details -->
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-indigo-500 transition-colors">
-              {{ project.name }}
-            </h3>
-            <p class="mt-2 text-gray-600 dark:text-gray-400 line-clamp-3">
-              {{ project.desc }}
-            </p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span
-                v-for="tech in project.stack"
-                :key="tech"
-                class="px-2 py-1 bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-200 rounded text-sm font-medium"
-              >
-                {{ tech }}
-              </span>
-            </div>
-          </div>
+  <div class="project-detail-page bg-gray-50 dark:bg-gray-900 min-h-screen py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Project Header -->
+      <header class="project-header flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-12">
+        <img
+          :src="project.logo"
+          :alt="project.name"
+          class="project-logo w-24 h-24 sm:w-32 sm:h-32 object-contain rounded-lg border border-gray-200 dark:border-gray-700"
+        />
+        <div class="project-title-section text-center sm:text-left">
+          <h1 class="project-name text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white">
+            {{ project.name }}
+          </h1>
+          <p class="project-type text-lg text-gray-600 dark:text-gray-400 mt-2">
+            {{ project.type?.toUpperCase() }} Project
+          </p>
+          <a
+            :href="project.url"
+            target="_blank"
+            class="project-url mt-4 inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-medium transition-colors"
+          >
+            Visit Project ↗
+          </a>
         </div>
-      </div>
+      </header>
+
+      <!-- Project Main Content -->
+      <section class="project-main grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Project Description -->
+        <div class="project-description bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">About the Project</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">{{ project.desc }}</p>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="project-stack bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Technology Stack</h2>
+          <ul class="stack-list flex flex-wrap gap-2">
+            <li
+              v-for="tech in project.stack"
+              :key="tech"
+              class="stack-item bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-200 px-3 py-1 rounded-full text-sm font-medium"
+            >
+              {{ tech }}
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Project Gallery -->
+      <section class="project-gallery mt-12">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Gallery</h2>
+        <div class="image-gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <img
+            v-for="(img, index) in project.imgs"
+            :key="index"
+            :src="img"
+            :alt="'Screenshot ' + (index + 1)"
+            class="gallery-image w-full h-auto rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+          />
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 // Import project images
 import bimma from '@/assets/img/bimma.png';
@@ -84,16 +83,7 @@ import eg1 from '@/assets/img/eg1.svg';
 import eg2 from '@/assets/img/eg2.svg';
 import eg3 from '@/assets/img/eg3.svg';
 
-const router = useRouter();
-const activeTab = ref('web');
-
-// Define tabs
-const tabs = [
-  { id: 'web', label: 'Web Apps' },
-  { id: 'mobile', label: 'Mobile Apps' },
-];
-
-// Define projects
+const route = useRoute();
 const projects = ref([
   {
     id: 1,
@@ -147,25 +137,22 @@ const projects = ref([
   },
 ]);
 
-// Filter projects based on active tab
-const filteredProjects = computed(() =>
-  projects.value.filter((project) => project.type === activeTab.value)
-);
+const project = ref({});
 
-// Navigate to project detail page
-const navigateToDetail = (project) => {
-  router.push({
-    name: 'project',
-    params: { slug: project.slug },
-  });
-};
+onMounted(() => {
+  const slug = route.params.slug;
+  project.value = projects.value.find((p) => p.slug === slug);
+});
 </script>
 
 <style scoped>
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  -webkit-line-clamp: 3;
+/* Custom styles for transitions and hover effects */
+.gallery-image {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 </style>

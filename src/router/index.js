@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Project from '../views/Project.vue'
 import Portfolio from '../views/Portfolio.vue'
 import Resume from '../views/Resume.vue'
 import Contact from '../views/Contact.vue'
@@ -18,6 +19,12 @@ const router = createRouter({
       name: 'portfolio',
       component: Portfolio,
       meta: { title: 'Portfolio' }
+    },
+    {
+      path: '/project/:slug',
+      name: 'project',
+      component: Project,
+      meta: { title: 'Project' }
     },
     {
       path: '/resume',

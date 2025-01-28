@@ -1,96 +1,109 @@
 <template>
-  <section class="text-gray-600 px-20 py-10 mx-auto body-font">
-    <div class="container flex flex-wrap">
-      <div class="flex justify-between w-full">
-        <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+  <section class="text-gray-600 px-10 py-10 mx-auto body-font">
+    <div class="container mx-auto">
+      <!-- Header for Resume -->
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold tracking-wide text-indigo-500 uppercase">
+          Resume
+        </h1>
+      </div>
+
+      <!-- Experiences Section -->
+      <div>
+        <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-6">
+          Experiences
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
-            class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4"
+            v-for="exp in experiences"
+            :key="exp.id"
+            class="flex flex-col border border-gray-300 rounded-lg p-4 shadow-md bg-white"
           >
-            experiences
-          </div>
-          <div v-for="exp in experiences" :key="exp.id" class="flex relative pb-12">
-            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-            </div>
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10"
-            ></div>
-            <div class="flex-grow pl-4 dark:text-gray-400">
-              <p class="font-medium">
-                {{ exp.company }}
-              </p>
-              <h2 class="font-medium text-sm">
-                {{ exp.dates }}
-              </h2>
-              <p class="text-sm my-1">{{ exp.title }}</p>
-              <p class="text-sm" v-html="exp.desc"></p>
-            </div>
+            <h3 class="font-medium text-indigo-600 text-lg mb-1">
+              {{ exp.company }}
+            </h3>
+            <p class="text-sm text-gray-500 italic mb-2">{{ exp.dates }}</p>
+            <h4 class="text-gray-800 font-medium text-sm mb-2">
+              {{ exp.title }}
+            </h4>
+            <p class="text-gray-600 text-sm" v-html="exp.desc"></p>
           </div>
         </div>
-        <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+      </div>
+
+      <!-- Education Section -->
+      <div class="mt-10">
+        <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-6">
+          Education
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
-            class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4"
+            v-for="edu in educations"
+            :key="edu.id"
+            class="flex flex-col border border-gray-300 rounded-lg p-4 shadow-md bg-white"
           >
-            education
+            <h3 class="font-medium text-indigo-600 text-lg mb-1">
+              {{ edu.school }}
+            </h3>
+            <p class="text-sm text-gray-500 italic mb-2">{{ edu.dates }}</p>
+            <p class="text-gray-800 text-sm">{{ edu.degree }}</p>
           </div>
-          <div v-for="edu in educations" :key="edu.id" class="flex relative pb-12">
-            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Soft Skills Section -->
+      <div class="mt-10">
+        <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4">
+          Soft Skills
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="skill in softSkills" :key="skill.id" class="p-2">
+            <div class="dark:text-gray-400 text-sm font-medium mb-2">
+              {{ skill.name }}
             </div>
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10"
-            ></div>
-            <div class="flex-grow pl-4 dark:text-gray-400">
-              <h2 class="font-medium text-sm">
-                {{ edu.dates }}
-              </h2>
-              <p>
-                {{ edu.school }}
-              </p>
-              {{ edu.degree }}
+            <div class="w-full h-2 bg-gray-200 rounded-full">
+              <div
+                class="h-full text-center text-xs text-white bg-indigo-500 rounded-full"
+                :class="skill.level"
+              ></div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-1">
-      soft skills
-    </div>
-    <div class="grid grid-cols-4 mb-4">
-      <div v-for="skill in softSkills" :key="skill.id" class="block p-2 col-span-1">
-        <div class="dark:text-gray-400">{{ skill.name }}</div>
-        <div class="w-full h-2 bg-gray-200 rounded-full mt-3">
-          <div
-            class="h-full text-center text-xs text-white bg-indigo-500 rounded-full"
-            :class="skill.level"
-          ></div>
+
+      <!-- Coding Skills Section -->
+      <div class="mt-10">
+        <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4">
+          Coding Skills
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="skill in hardSkills" :key="skill.id" class="p-2">
+            <div class="dark:text-gray-400 text-sm font-medium mb-2">
+              {{ skill.name }}
+            </div>
+            <div class="w-full h-2 bg-gray-200 rounded-full">
+              <div
+                class="h-full text-center text-xs text-white bg-indigo-500 rounded-full"
+                :class="skill.level"
+              ></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-1">
-      coding skills
-    </div>
-    <div class="grid grid-cols-4">
-      <div v-for="skill in hardSkills" :key="skill.id" class="block p-2 col-span-1">
-        <div class="dark:text-gray-400">{{ skill.name }}</div>
-        <div class="w-full h-2 bg-gray-200 rounded-full mt-3">
-          <div
-            class="h-full text-center text-xs text-white bg-indigo-500 rounded-full"
-            :class="skill.level"
-          ></div>
-        </div>
+
+      <!-- Download Resume Button -->
+      <div class="flex justify-center mt-10 pb-4">
+        <button
+          class="rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+          @click="downloadFile"
+        >
+          Download Resume
+        </button>
       </div>
     </div>
   </section>
-  <div class="flex justify-center mt-2 pb-4 sticky bottom-0">
-    <button
-      class="rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-      @click="downloadFile"
-    >
-      Download resume
-    </button>
-  </div>
 </template>
+
 <script setup>
 import { ref } from 'vue'
 import fileUrl from '../../public/files/cv.pdf'
