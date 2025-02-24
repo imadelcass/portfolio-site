@@ -7,6 +7,8 @@ export const useModeStore = defineStore('mode', {
   actions: {
     setMode(value) {
       this.isDark = value
+      // Set the dark mode class on the body element
+      document.body.classList.toggle('dark', value)
     }
   }
 })
