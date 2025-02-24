@@ -22,7 +22,7 @@
             'bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700':
               activeTab !== tab.id
           }"
-          @click="activeTab = tab.id"
+          @click="onTabClicked(tab)"
         >
           {{ tab.label }}
         </button>
@@ -105,7 +105,6 @@ import cod2 from '@/assets/img/cod2.png'
 import cod3 from '@/assets/img/cod3.png'
 
 const router = useRouter()
-const activeTab = ref('web')
 
 // Define tabs
 const tabs = [
@@ -133,7 +132,7 @@ const projects = ref([
     name: 'COD Delivery Man',
     slug: 'cod-delivery-man',
     url: 'https://vermillion-sundae-963a42.netlify.app/',
-    desc: t('projects-info.delivery-man.desc'),
+    desc: t('projects-info.cod-delivery-man.desc'),
     logo: 'https://vermillion-sundae-963a42.netlify.app/assets/cod-power-group-logo-CEykfBH7.svg',
     imgs: [cod1, cod2, cod3]
   },
@@ -187,11 +186,23 @@ const filteredProjects = computed(() =>
   projects.value.filter((project) => project.type === activeTab.value)
 )
 
+const activeTab = computed(() => {
+  const tabId = router.currentRoute.value.query.tab
+  return tabId ? tabId : 'web'
+})
 // Navigate to project detail page
 const navigateToDetail = (project) => {
   router.push({
     name: 'project',
     params: { slug: project.slug, lang: router.currentRoute.value.params.lang }
+  })
+}
+
+const onTabClicked = (tab) => {
+  router.push({
+    name: 'portfolio',
+    params: { lang: router.currentRoute.value.params.lang },
+    query: { tab: tab.id }
   })
 }
 </script>

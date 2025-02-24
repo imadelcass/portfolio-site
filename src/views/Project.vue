@@ -2,6 +2,19 @@
   <div class="project-detail-page bg-gray-50 dark:bg-gray-900 min-h-screen py-12">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Project Header -->
+      <el-breadcrumb separator="/" class="mb-6">
+        <el-breadcrumb-item :to="{ path: '/' }">
+          <div class="text-black font-bold hover:text-indigo-500 dark:text-white">
+            {{ $t('home') }}
+          </div>
+        </el-breadcrumb-item>
+        <el-breadcrumb-item class="cursor-pointer" @click="onPortfolioClicked">
+          <div class="text-black font-bold hover:text-indigo-500 dark:text-white">
+            {{ $t('portfolio') }}
+          </div>
+        </el-breadcrumb-item>
+        <el-breadcrumb-item>{{ project.name }}</el-breadcrumb-item>
+      </el-breadcrumb>
       <header class="project-header flex flex-col sm:flex-row items-center gap-6 sm:gap-8 mb-12">
         <img
           :src="project.logo"
@@ -95,7 +108,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { t } from '@/lang'
 
 // Import project images
@@ -127,6 +140,7 @@ import cod2 from '@/assets/img/cod2.png'
 import cod3 from '@/assets/img/cod3.png'
 
 const route = useRoute()
+const router = useRouter()
 const projects = ref([
   {
     id: 5,
@@ -147,7 +161,7 @@ const projects = ref([
     slug: 'cod-delivery-man',
     url: 'https://vermillion-sundae-963a42.netlify.app/',
     desc: t('projects-info.cod-delivery-man.desc'),
-    logo: "https://vermillion-sundae-963a42.netlify.app/assets/cod-power-group-logo-CEykfBH7.svg",
+    logo: 'https://vermillion-sundae-963a42.netlify.app/assets/cod-power-group-logo-CEykfBH7.svg',
     imgs: [cod1, cod2, cod3]
   },
   {
@@ -208,6 +222,11 @@ onMounted(() => {
   const slug = route.params.slug
   project.value = projects.value.find((p) => p.slug === slug)
 })
+
+const onPortfolioClicked = () => {
+  // go back to portfolio page
+  router.back()
+}
 </script>
 
 <style scoped>
