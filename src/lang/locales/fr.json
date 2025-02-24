@@ -1,0 +1,101 @@
+{
+  "home": "Accueil",
+  "portfolio": "Portfolio",
+  "resume": "Résumé",
+  "contact": "Contact",
+  "experiences": "Expériences",
+  "projects": "Projets",
+  "education": "Éducation",
+  "soft-skills": "Compétences Douces",
+  "coding-skills": "Compétences Techniques",
+  "download-resume": "Télécharger le CV",
+  "contact-me": "Contactez-moi",
+  "contact-description": "N'hésitez pas à me contacter pour toute question ou assistance dont vous pourriez avoir besoin - je suis là pour vous aider !",
+  "name": "Nom",
+  "email": "E-mail",
+  "message": "Message",
+  "submit": "Soumettre",
+  "thank-you": "Merci de m'avoir contacté !",
+  "get-back-soon": "Je vous répondrai bientôt",
+  "back": "Retour",
+  "project": "Projet",
+  "visit-project": "Visiter le projet",
+  "about-project": "À propos du projet",
+  "technology-stack": "Pile technologique",
+  "gallery": "Galerie",
+  "profile-alt": "Imad El Cass",
+  "greeting": "Salut !",
+  "bio-intro": "Je suis",
+  "bio-description": "un technicien en développement informatique spécialisé dans le développement web et mobile. Basé au Maroc, j'ai mené à bien de nombreux projets, en visant toujours l'excellence. Si vous cherchez un développeur pour donner vie à vos idées, je suis là pour vous aider. Collaborons sur votre prochain projet et faisons-en le meilleur !",
+  "linkedin-label": "Profil LinkedIn",
+  "github-label": "Profil GitHub",
+  "settings": "Paramètres",
+  "dark-mode": "Mode nuit",
+  "language": "Langue",
+  "portfolio-description": "Explorez les projets que j'ai accompli en tant que developpeur web et mobile.",
+  "mobile-apps": "Applications mobiles",
+  "web-apps": "Applications web",
+  "projects-info": {
+    "azora-shop": {
+      "name": "Azora Shop",
+      "desc": "Azora Shop est une plateforme e-commerce moderne conçue pour offrir une expérience d'achat fluide.",
+      "short-desc": "Azora Shop est une plateforme e-commerce moderne conçue pour offrir une experiencia d'achat fluide."
+    },
+    "cod-delivery-man": {
+      "name": "COD Delivery Man",
+      "desc": "COD Delivery Man est une application mobile multiplateforme conçue pour rationaliser les opérations du personnel de livraison dans le commerce du paiement à la livraison (COD).",
+      "short-desc": "COD Delivery Man est une application mobile multiplateforme conçue pour rationaliser les opérations du personnel de livraison dans le commerce du paiement à la livraison (COD)."
+    },
+    "elevateguru": {
+      "name": "Elevate Guru",
+      "desc": "ElevateGuru.com est une plateforme en ligne conçue pour les conseillers en entreprise et les entrepreneurs, améliorant le flux de travail et la collaboration.",
+      "short-desc": "ElevateGuru.com est une plateforme en ligne conçue pour les conseillers en entreprise et les entrepreneurs, améliorant le flux de travail et la collaboration."
+    },
+    "agriwise": {
+      "name": "Agriwise",
+      "desc": "Agriwise est un système de gestion agricole complet qui rationalise divers processus agricoles.",
+      "short-desc": "Agriwise est un système de gestion agricole complet qui rationalise divers processus agricoles."
+    },
+    "ma3ahid": {
+      "name": "Ma3ahid",
+      "desc": "Ma3ahid est une application web polyvalente conçue pour la gestion scolaire, répondant aux besoins des stagiaires, formateurs et tuteurs.",
+      "short-desc": "Ma3ahid est une application web polyvalente conçue pour la gestion scolaire,/respondant aux besoins des stagiaires, formateurs et tuteurs."
+    },
+    "bimma-ewd": {
+      "name": "Bimma EWD",
+      "desc": "Bimma EWD est une application mobile développée avec JavaScript, React Native, PHP et les frameworks Laravel.",
+      "short-desc": "Bimma EWD est une application mobile developpee avec JavaScript, React Native, PHP et les frameworks Laravel."
+    }
+  },
+  "experiences-info": {
+    "brainbytes": {
+      "title": "Developpeur Web",
+      "dates": "Février 2024 - Septembre 2024",
+      "desc": "<strong>1. Finalisation et amélioration de l'application existante :</strong> Travaillé avec l'équipe pour finaliser la version 1 d'une application utilisant CakePHP et MySQL, en corrigeant les problèmes et en effectuant des ajustements pour répondre aux besoins des utilisateurs.<br><br><strong>2. Optimisation des fonctionnalités d'exportation :</strong> Mise en place d'un système de file d'attente pour gérer l'exportation de données PDF avec Puppeteer, améliorant ainsi les performances et la stabilité de l'application.<br><br><strong>3. Configuration de Docker et séparation des modules :</strong> Configuré Docker pour faciliter le déploiement de l'application et isolé différents modules dans des conteneurs, améliorant ainsi la portabilité et la gestion des dépendances.<br><br><strong>4. Intégration des WebSockets :</strong> Ajout de WebSockets pour la communication en temps réel entre le frontend et le backend, permettant le suivi du statut de téléchargement des fichiers et la mise à jour instantanée des utilisateurs.<br><br><strong>5. Migration vers Laravel et Vue.js :</strong> Refonte de l'application en utilisant Laravel pour le backend et Vue.js pour le frontend afin de mieux séparer les responsabilités et d'améliorer la maintenabilité et l'évolutivité du système.<br><br><strong>6. Optimisation des bases de données :</strong> Refonte des migrations de base de données pour optimiser les performances, réduire les temps de requête et améliorer la gestion des données pour une expérience utilisateur plus fluide."
+    },
+    "wise-systems": {
+      "title": "Developpeur Web",
+      "dates": "Octobre 2022 - Janvier 2024",
+      "desc": "<strong>1. Développement d'application web :</strong> Création d'une application web robuste nommée Agriwise avec un design serveur sous Laravel et un design client sous Vue.js. Mise en place d'une architecture MVC bien conçue avec une séparation claire des préoccupations et un code propre pour une maintenance facile.<br><br><strong>2. Gestion de base de données :</strong> Conception et optimisation d'une grande base de données relationnelle sous MySQL : schémas, optimisation et migration des bases de données. Développement de fonctionnalités d'exportation de rapports pour analyser les données et fournir des informations aux utilisateurs.<br><br><strong>3. Tests et débogage :</strong> Tests et débogage des API RESTful avec Insomnia pour garantir des services web cohérents et performants. Documentation des API pour une intégration logicielle efficace, réduisant ainsi les coûts de développement et améliorant l'expérience utilisateur.<br><br><strong>4. Gestion du contrôle de version et du code source :</strong> Utilisation de Git pour le contrôle de version du code source et collaboration avec une équipe sur GitHub en suivant les meilleures pratiques de branchement et de fusion. Réalisation de revues de code pour garantir la qualité du code.<br><br><strong>5. Méthodologie Agile :</strong> Travail en équipe Agile, participation aux réunions quotidiennes pour discuter des projets d'équipe et adaptation des plans selon les besoins. Collaboration active avec d'autres développeurs pour résoudre les problèmes techniques et concevoir, coder et déployer de manière collaborative et responsable.<br><br><strong>6. Collaboration et support inter-équipes :</strong> Collaboration avec les équipes de design et de produit pour influencer et définir les exigences techniques."
+    }
+  },
+  "educations": {
+    "institute-agadir": {
+      "school": "Institut Spécialisé de Technologie Appliquée - Agadir",
+      "location": "Agadir, Maroc",
+      "dates": "Octobre 2020 - Juin 2022",
+      "degree": "Technicien spécialisé en développement informatique"
+    },
+    "essaada-agadir": {
+      "school": "ESSAADA - Agadir",
+      "location": "Agadir, Maroc",
+      "dates": "Octobre 2015 - Juin 2016",
+      "degree": "Baccalauréat en sciences physiques"
+    }
+  },
+  "communication" : "Communication",
+  "problem-solving" : "Résolution de problèmes",
+  "time-management" : "Gestion du temps",
+  "teamwork" : "Travail en equipe",
+  "click-on-image-to-open-fullscreen-view" : "Cliquez sur l'image pour ouvrir la vue plein ecran"
+}

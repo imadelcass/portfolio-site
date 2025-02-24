@@ -1,0 +1,101 @@
+{
+  "home": "Home",
+  "portfolio": "Portfolio",
+  "resume": "Resume",
+  "contact": "Contact",
+  "experiences": "Experiences",
+  "projects": "Projects",
+  "education": "Education",
+  "soft-skills": "Soft Skills",
+  "coding-skills": "Coding Skills",
+  "download-resume": "Download Resume",
+  "contact-me": "Contact Me",
+  "contact-description": "Feel free to reach out to me for any inquiries or assistance you may need - I'm here to help!",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "submit": "Submit",
+  "thank-you": "Thank you for contacting me!",
+  "get-back-soon": "I will get back to you soon",
+  "back": "Back",
+  "project": "Project",
+  "visit-project": "Visit Project",
+  "about-project": "About the Project",
+  "technology-stack": "Technology Stack",
+  "gallery": "Gallery",
+  "profile-alt": "Imad El Cass",
+  "greeting": "Hi!",
+  "bio-intro": "I'm",
+  "bio-description": "a computer development technician specializing in web and mobile development. Based in Morocco, I've successfully delivered numerous projects, always striving for excellence. If you're looking for a developer to bring your ideas to life, I'm here to help. Let's collaborate on your next project and make it the best one yet!",
+  "linkedin-label": "LinkedIn Profile",
+  "github-label": "GitHub Profile",
+  "settings": "Settings",
+  "dark-mode": "Dark Mode",
+  "language": "Language",
+  "portfolio-description": "Explore the work I've done in web and mobile applications.",
+  "mobile-apps": "Mobile Apps",
+  "web-apps": "Web Apps",
+  "projects-info": {
+    "azora-shop": {
+      "name": "Azora Shop",
+      "desc": "Azora Shop is a modern e-commerce platform designed to provide a seamless shopping experience.",
+      "short-desc": "Azora Shop is a modern e-commerce platform designed to provide a seamless shopping experience."
+    },
+    "cod-delivery-man": {
+      "name": "COD Delivery Man",
+      "desc": "COD Delivery Man is a cross-platform mobile app designed to streamline the operations of delivery personnel in the Cash on Delivery (COD) business.",
+      "short-desc": "COD Delivery Man is a cross-platform mobile app designed to streamline the operations of delivery personnel in the Cash on Delivery (COD) business."
+    },
+    "elevateguru": {
+      "name": "Elevate Guru",
+      "desc": "ElevateGuru.com is an online platform tailored for business advisors and entrepreneurs, enhancing workflow and collaboration.",
+      "short-desc": "ElevateGuru.com is an online platform tailored for business advisors and entrepreneurs, enhancing workflow and collaboration."
+    },
+    "agriwise": {
+      "name": "Agriwise",
+      "desc": "Agriwise is a comprehensive farm management system that streamlines various agricultural processes.",
+      "short-desc": "Agriwise is a comprehensive farm management system that streamlines various agricultural processes."
+    },
+    "ma3ahid": {
+      "name": "Ma3ahid",
+      "desc": "Ma3ahid is a versatile web application tailored for school management, catering to the needs of trainees, trainers, and tutors.",
+      "short-desc": "Ma3ahid is a versatile web application tailored for school management, catering to the needs of trainees, trainers, and tutors."
+    },
+    "bimma-ewd": {
+      "name": "Bimma EWD",
+      "desc": "Bimma EWD is a mobile application developed using JavaScript, React Native, PHP, and Laravel frameworks.",
+      "short-desc": "Bimma EWD is a mobile application developed using JavaScript, React Native, PHP, and Laravel frameworks."
+    }
+  },
+  "experiences-info": {
+    "brainbytes": {
+      "title": "Web Developer",
+      "dates": "February 2024 - September 2024",
+      "desc": "<strong>1. Finalizing and Improving the Existing Application:</strong> Worked with the team to finalize version 1 of an application using CakePHP and MySQL, fixing issues and making adjustments to meet user needs.<br><br><strong>2. Optimizing Export Features:</strong> Implemented a queuing system to handle PDF data export with Puppeteer, improving the app's performance and stability.<br><br><strong>3. Setting Up Docker and Separating Modules:</strong> Configured Docker for easier app deployment and isolated different modules in containers, enhancing portability and dependency management.<br><br><strong>4. Integrating WebSockets:</strong> Added WebSockets for real-time communication between the frontend and backend, enabling file download status tracking and instant updates for users.<br><br><strong>5. Migrating to Laravel and Vue.js:</strong> Rebuilt the application using Laravel for the backend and Vue.js for the frontend to clearly separate responsibilities and improve system maintainability and scalability.<br><br><strong>6. Optimizing Databases:</strong> Redid database migrations to optimize performance, reducing query times and improving data management for a smoother and more responsive user experience."
+    },
+    "wise-systems": {
+      "title": "Web Developer",
+      "dates": "October 2022 - January 2024",
+      "desc": "<strong>1. Web Application Development:</strong> Built a strong web application named Agriwise with server-side design in Laravel and client-side design in Vue.js. Developed a well-designed MVC architecture with clear separation of concerns and wrote clean code for easy maintenance.<br><br><strong>2. Database Management:</strong> Designed and optimized a large relational database in MySQL: schemas, database optimization, and database migration. Developed export features for reports to analyze data and provide information to users.<br><br><strong>3. Testing and Debugging:</strong> Tested and debugged RESTful APIs with Insomnia to ensure consistent and high-performance web services. Documented APIs for effective software integration to reduce development costs and improve user experience.<br><br><strong>4. Version Control and Source Code Management:</strong> Used Git for source code version control and worked with a team on GitHub, following best practices for branching and merging. Conducted code reviews to ensure code quality.<br><br><strong>5. Agile Methodology:</strong> Worked in an Agile team, joined daily meetings to discuss team projects, and adapted plans as needed. Actively collaborated with other developers to solve technical problems and design, code, and deploy collaboratively and responsibly.<br><br><strong>6. Collaboration and Inter-Team Support:</strong> Collaborated with design and product teams to influence and define technical requirements."
+    }
+  },
+  "educations": {
+    "institute-agadir": {
+      "school": "Specialized Institute of Applied Technology - Agadir",
+      "location": "Agadir, Morocco",
+      "dates": "October 2020 - June 2022",
+      "degree": "Specialized Technician in Software Development"
+    },
+    "essaada-agadir": {
+      "school": "ESSAADA - Agadir",
+      "location": "Agadir, Morocco",
+      "dates": "October 2015 - June 2016",
+      "degree": "High School Diploma in Physical Sciences"
+    }
+  },
+  "communication": "Communication",
+  "problem-solving": "Problem Solving",
+  "time-management": "Time Management",
+  "teamwork": "Teamwork",
+  "click-on-image-to-open-fullscreen-view": "Click on image to open fullscreen view"
+}

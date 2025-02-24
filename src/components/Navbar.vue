@@ -17,15 +17,36 @@
         <div class="hidden lg:flex lg:items-center lg:space-x-6">
           <ul class="flex space-x-6">
             <li v-for="route in routes" :key="route.name">
-              <router-link
-                :to="route.to"
-                class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors"
+              <a
+                @click="onRouteClicked(route)"
+                class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors cursor-pointer"
               >
-                {{ route.name }}
-              </router-link>
+                {{ $t(route.name) }}
+              </a>
             </li>
           </ul>
 
+          <!-- Language Switch -->
+          <el-dropdown class="ml-auto" trigger="click" @command="onLangChange">
+            <span class="text-center">
+              {{ selectedLang }}
+              <i-tabler-chevron-down class="m-auto h-4" />
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item
+                  v-for="(option, i) in [
+                    { label: 'en', value: 'en' },
+                    { label: 'fr', value: 'fr' }
+                  ]"
+                  :key="i"
+                  :command="option.value"
+                >
+                  {{ $t(option.label) }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
           <!-- Dark Mode Toggle -->
           <el-switch
             v-model="darkMode"
@@ -65,22 +86,24 @@
           <li v-for="route in routes" :key="route.name" class="cursor-pointer">
             <div
               class="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-              @click="onRouteClicked(route.to)"
+              @click="onRouteClicked(route)"
             >
-              {{ route.name }}
+              {{ $t(route.name) }}
             </div>
           </li>
         </ul>
 
         <el-divider class="my-4 dark:border-gray-600">
-          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Switch Theme</span>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{{
+            $t('settings')
+          }}</span>
         </el-divider>
 
         <!-- Dark Mode Toggle for Mobile -->
         <div
           class="w-full flex items-center justify-between mt-4 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
         >
-          <div>{{ darkMode ? 'Dark Mode' : 'Light Mode' }}</div>
+          <div>{{ $t('dark-mode') }}</div>
           <el-switch
             v-model="darkMode"
             :active-action-icon="Moon"
@@ -90,41 +113,88 @@
             class="ml-4"
           />
         </div>
+        <!-- Language Switch -->
+        <div
+          class="w-full flex items-center justify-between mt-4 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
+          <div>{{ $t('language') }}</div>
+          <el-dropdown class="ml-auto" trigger="click" @command="onLangChange">
+            <span class="text-center">
+              {{ selectedLang }}
+              <i-tabler-chevron-down class="m-auto h-4" />
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item
+                  v-for="(option, i) in [
+                    { label: 'en', value: 'en' },
+                    { label: 'fr', value: 'fr' }
+                  ]"
+                  :key="i"
+                  :command="option.value"
+                >
+                  {{ $t(option.label) }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+        </div>
       </el-drawer>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { Sunny, Moon } from '@element-plus/icons-vue'
 import { useModeStore } from '@/stores/modeStore'
 import { useRouter } from 'vue-router'
 import { ElDrawer } from 'element-plus'
+import { useI18n } from 'vue-i18n'
 
 const modeStore = useModeStore()
 const isOpen = ref(false)
 const darkMode = ref(false)
 const router = useRouter()
+const selectedLang = ref(null)
+const { locale } = useI18n()
 
-const routes = ref([
-  { name: 'Home', to: '/' },
-  { name: 'Portfolio', to: '/portfolio' },
-  { name: 'Resume', to: '/resume' },
-  { name: 'Contact', to: '/contact' }
-])
+watch(
+  () => router.currentRoute.value.params.lang,
+  (newLang) => {
+    if (newLang) {
+      selectedLang.value = newLang
+      locale.value = newLang
+    } else {
+      selectedLang.value = locale.value
+    }
+  }
+)
+
+const routes = computed(() => {
+  return [{ name: 'home' }, { name: 'portfolio' }, { name: 'resume' }, { name: 'contact' }]
+})
 
 const toggleMode = () => {
   modeStore.setMode(darkMode.value)
 }
 
 const onRouteClicked = (route) => {
+  router.push({
+    name: route.name,
+    params: { lang: selectedLang.value }
+  })
   isOpen.value = false
-  router.push(route)
 }
 
 const handleClose = (done) => {
   isOpen.value = false
   done()
+}
+
+const onLangChange = async (lang) => {
+  locale.value = lang
+  await router.push({ params: { lang } })
+  window.location.reload()
 }
 </script>

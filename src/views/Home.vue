@@ -7,17 +7,18 @@
         <img
           class="w-full max-w-md h-auto rounded-lg shadow-lg object-cover transform transition-transform duration-300 hover:scale-105"
           src="@/assets/img/profile.jpg"
-          alt="Imad El Cass"
+          :alt="$t('profile-alt')"
         />
       </div>
 
       <!-- Bio Section -->
       <div class="custom_font">
         <h3 class="text-2xl lg:text-3xl font-semibold dark:text-gray-400 mb-4">
-          Hi! <span class="text-indigo-500">👋</span>
+          {{ $t('greeting') }} <span class="text-indigo-500">👋</span>
         </h3>
         <p class="text-lg lg:text-xl dark:text-gray-400 leading-relaxed">
-          I'm <span class="text-indigo-500 font-medium">Imad El Cass</span>, a computer development technician specializing in web and mobile development. Based in Morocco, I've successfully delivered numerous projects, always striving for excellence. If you're looking for a developer to bring your ideas to life, I'm here to help. Let's collaborate on your next project and make it the best one yet!
+          {{ $t('bio-intro') }} <span class="text-indigo-500 font-medium">Imad El Cass</span>,
+          {{ $t('bio-description') }}
         </p>
       </div>
     </div>
@@ -28,7 +29,7 @@
         href="https://www.linkedin.com/in/imad-elcass/"
         target="_blank"
         class="text-gray-500 hover:text-indigo-500 transition-colors duration-300"
-        aria-label="LinkedIn Profile"
+        :aria-label="$t('linkedin-label')"
       >
         <svg
           class="h-8 w-8"
@@ -45,7 +46,7 @@
         href="https://github.com/imadelcass"
         target="_blank"
         class="text-indigo-500 hover:text-gray-500 transition-colors duration-300"
-        aria-label="GitHub Profile"
+        :aria-label="$t('github-label')"
       >
         <svg
           class="h-8 w-8"
@@ -62,13 +63,9 @@
   </div>
 </template>
 
-<script setup>
-// No additional logic needed for now
-</script>
-
 <style>
 .custom_font {
-  font-family: "Segoe Print", cursive;
+  font-family: 'Segoe Print', cursive;
 }
 
 /* Optional: Add a subtle fade-in animation */

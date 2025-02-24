@@ -3,13 +3,15 @@
     <div class="container mx-auto">
       <!-- Header for Resume -->
       <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold tracking-wide text-indigo-500 uppercase">📝 Resume 🧑‍💻</h1>
+        <h1 class="text-2xl font-bold tracking-wide text-indigo-500 uppercase">
+          📝 {{ $t('resume') }} 🧑‍💻
+        </h1>
       </div>
 
       <!-- Experiences Section -->
       <div>
         <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-6">
-          Experiences
+          {{ $t('experiences') }}
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
@@ -32,7 +34,7 @@
       <!-- Projects Section -->
       <div class="mt-10">
         <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium mb-6">
-          Projects
+          {{ $t('projects') }}
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
@@ -55,7 +57,10 @@
               </span>
             </div>
             <p class="text-sm text-gray-500 dark:text-gray-300 italic mb-3">{{ proj.dates }}</p>
-            <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed" v-html="proj.desc"></p>
+            <p
+              class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed"
+              v-html="proj.desc"
+            ></p>
           </div>
         </div>
       </div>
@@ -63,7 +68,7 @@
       <!-- Education Section -->
       <div class="mt-10">
         <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-6">
-          Education
+          {{ $t('education') }}
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div
@@ -83,7 +88,7 @@
       <!-- Soft Skills Section -->
       <div class="mt-10">
         <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4">
-          Soft Skills
+          {{ $t('soft-skills') }}
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="skill in softSkills" :key="skill.id" class="p-2">
@@ -103,7 +108,7 @@
       <!-- Coding Skills Section -->
       <div class="mt-10">
         <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium title-font mb-4">
-          Coding Skills
+          {{ $t('coding-skills') }}
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="skill in hardSkills" :key="skill.id" class="p-2">
@@ -126,7 +131,7 @@
           class="rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           @click="downloadFile"
         >
-          Download Resume
+          {{ $t('download-resume') }}
         </button>
       </div>
     </div>
@@ -136,60 +141,22 @@
 <script setup>
 import { ref } from 'vue'
 import fileUrl from '../../public/files/cv.pdf'
+import { t } from '@/lang'
 
 const experiences = ref([
   {
     company: 'BRAINBYTES',
-    title: 'Web Developer',
-    desc: `<strong>1. Finalizing and Improving the Existing Application:</strong> 
-    Worked with the team to finalize version 1 of an application using CakePHP and MySQL, fixing issues and making adjustments to meet user needs.
-    <br><br>
-    <strong>2. Optimizing Export Features:</strong> 
-    Implemented a queuing system to handle PDF data export with Puppeteer, improving the app's performance and stability.
-    <br><br>
-    <strong>3. Setting Up Docker and Separating Modules:</strong> 
-    Configured Docker for easier app deployment and isolated different modules in containers, enhancing portability and dependency management.
-    <br><br>
-    <strong>4. Integrating WebSockets:</strong> 
-    Added WebSockets for real-time communication between the frontend and backend, enabling file download status tracking and instant updates for users.
-    <br><br>
-    <strong>5. Migrating to Laravel and Vue.js:</strong> 
-    Rebuilt the application using Laravel for the backend and Vue.js for the frontend to clearly separate responsibilities and improve system maintainability and scalability.
-    <br><br>
-    <strong>6. Optimizing Databases:</strong> 
-    Redid database migrations to optimize performance, reducing query times and improving data management for a smoother and more responsive user experience.
-    <br><br>`,
+    title: t('experiences-info.brainbytes.title'),
+    desc: t('experiences-info.brainbytes.desc'),
     location: 'Agadir, Morocco',
-    dates: 'February 2024 - September 2024'
+    dates: t('experiences-info.brainbytes.dates')
   },
   {
     company: 'WISE SYSTEMS',
-    title: 'Web Developer',
-    desc: `
-    <strong>1. Web Application Development:</strong> 
-    Built a strong web application named Agriwise with server-side design in Laravel and client-side design in Vue.js. 
-    Developed a well-designed MVC architecture with clear separation of concerns and wrote clean code for easy maintenance.
-    <br><br>
-    <strong>2. Database Management:</strong> 
-    Designed and optimized a large relational database in MySQL: schemas, database optimization, and database migration. 
-    Developed export features for reports to analyze data and provide information to users.
-    <br><br>
-    <strong>3. Testing and Debugging:</strong> 
-    Tested and debugged RESTful APIs with Insomnia to ensure consistent and high-performance web services. 
-    Documented APIs for effective software integration to reduce development costs and improve user experience.
-    <br><br>
-    <strong>4. Version Control and Source Code Management:</strong> 
-    Used Git for source code version control and worked with a team on GitHub, following best practices for branching and merging. 
-    Conducted code reviews to ensure code quality.
-    <br><br>
-    <strong>5. Agile Methodology:</strong> 
-    Worked in an Agile team, joined daily meetings to discuss team projects, and adapted plans as needed. 
-    Actively collaborated with other developers to solve technical problems and design, code, and deploy collaboratively and responsibly.
-    <br><br>
-    <strong>6. Collaboration and Inter-Team Support:</strong> 
-    Collaborated with design and product teams to influence and define technical requirements.`,
+    title: t('experiences-info.wise-systems.title'),
+    desc: t('experiences-info.wise-systems.desc'),
     location: 'Agadir, Morocco',
-    dates: 'October 2022 - January 2024'
+    dates: t('experiences-info.wise-systems.dates')
   }
 ])
 
@@ -198,60 +165,60 @@ const projects = ref([
     id: 5,
     type: 'web',
     stack: ['JavaScript', 'VueJS', 'NuxtJS', 'Pinia', 'I18n', 'PrimeVue', 'TailwindCSS'],
-    name: 'Azora Shop',
-    desc: 'Azora Shop'
+    name: t('projects-info.azora-shop.name'),
+    desc: t('projects-info.azora-shop.short-desc')
   },
   {
     id: 6,
     type: 'mobile',
     stack: ['JavaScript', 'Ionic', 'Capacitor', 'VueJs', 'Php', 'Laravel', 'MySQL'],
-    name: 'Delivery Man',
-    desc: 'Cross-platform app for delivery personnel in COD business, offering order management, real-time updates, and journey statistics.'
+    name: t('projects-info.delivery-man.name'),
+    desc: t('projects-info.delivery-man.short-desc')
   },
   {
     id: 1,
     type: 'web',
     stack: ['CakePHP', 'MySQL', 'Docker', 'Puppeteer', 'WebSockets', 'Laravel', 'Vue'],
-    name: 'Elevate Guru',
-    desc: 'Online platform for business advisors and entrepreneurs, offering tools for decision-making, training, and collaboration.'
+    name: t('projects-info.elevateguru.name'),
+    desc: t('projects-info.elevateguru.short-desc')
   },
   {
     id: 2,
     type: 'web',
     stack: ['JavaScript', 'Vue', 'Php', 'Laravel', 'MySQL'],
-    name: 'Agriwise',
-    desc: 'Farm management system streamlining agricultural processes like employee, inventory, and POS management.'
+    name: t('projects-info.agriwise.name'),
+    desc: t('projects-info.agriwise.short-desc')
   },
   {
     id: 3,
     type: 'web',
     stack: ['JavaScript', 'Vue', 'Php', 'Laravel', 'MySQL'],
-    name: 'Ma3ahid',
-    desc: 'School management app with timetable system, role-based access, data export, invoicing, and printable documents.'
+    name: t('projects-info.ma3ahid.name'),
+    desc: t('projects-info.ma3ahid.short-desc')
   },
   {
     id: 4,
     type: 'mobile',
     stack: ['JavaScript', 'React Native', 'Php', 'Laravel', 'MySQL'],
-    name: 'Bimma EWD',
-    desc: 'Mobile app for accessing BMW electrical schemas, with search, view, download, and bookmark features.'
+    name: t('projects-info.bimma-ewd.name'),
+    desc: t('projects-info.bimma-ewd.short-desc')
   }
 ])
 
 const educations = ref([
   {
     id: 1,
-    school: 'Specialized Institute of Applied T - Agadir',
-    location: 'Agadir, Morocco',
-    dates: 'October 2020 - June 2022',
-    degree: 'Specialized technician in computer development'
+    school: t('educations.institute-agadir.school'),
+    location: t('educations.institute-agadir.location'),
+    dates: t('educations.institute-agadir.dates'),
+    degree: t('educations.institute-agadir.degree')
   },
   {
     id: 2,
-    school: 'ESSAADA - Agadir',
-    location: 'Agadir, Morocco',
-    dates: 'October 2015 - June 2016',
-    degree: 'High school diploma in physical sciences'
+    school: t('educations.essaada-agadir.school'),
+    location: t('educations.essaada-agadir.location'),
+    dates: t('educations.essaada-agadir.dates'),
+    degree: t('educations.essaada-agadir.degree')
   }
 ])
 
@@ -287,24 +254,32 @@ const hardSkills = ref([
   {
     name: 'MySQL',
     level: 'w-3/4'
+  },
+  {
+    name: 'React Native',
+    level: 'w-3/4'
+  },
+  {
+    name: 'Ionic',
+    level: 'w-3/4'
   }
 ])
 
 const softSkills = ref([
   {
-    name: 'Communication',
+    name: t('communication'),
     level: 'w-4/5'
   },
   {
-    name: 'Problem-solving',
+    name: t('problem-solving'),
     level: 'w-4/5'
   },
   {
-    name: 'Adaptability',
+    name: t('time-management'),
     level: 'w-4/5'
   },
   {
-    name: 'Creativity',
+    name: t('teamwork'),
     level: 'w-4/5'
   }
 ])

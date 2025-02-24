@@ -3,17 +3,22 @@
     <form @submit.prevent="submitForm">
       <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-gray-400">Contact Me</h1>
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-gray-400"
+          >
+            {{ $t('contact-me') }}
+          </h1>
           <p class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-gray-400">
-            Feel free to reach out to me for any inquiries or assistance you may need - I'm here to
-            help!
+            {{ $t('contact-description') }}
           </p>
         </div>
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
           <div class="flex flex-wrap -m-2">
             <div class="p-2 w-1/2">
               <div class="relative">
-                <label for="name" class="leading-7 text-sm text-gray-600 dark:text-gray-400">Name</label>
+                <label for="name" class="leading-7 text-sm text-gray-600 dark:text-gray-400">
+                  {{ $t('name') }}
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -25,7 +30,9 @@
             </div>
             <div class="p-2 w-1/2">
               <div class="relative">
-                <label for="email" class="leading-7 text-sm text-gray-600 dark:text-gray-400">Email</label>
+                <label for="email" class="leading-7 text-sm text-gray-600 dark:text-gray-400">
+                  {{ $t('email') }}
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -37,7 +44,9 @@
             </div>
             <div class="p-2 w-full">
               <div class="relative">
-                <label for="message" class="leading-7 text-sm text-gray-600 dark:text-gray-400">Message</label>
+                <label for="message" class="leading-7 text-sm text-gray-600 dark:text-gray-400">
+                  {{ $t('message') }}
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -51,7 +60,7 @@
                 class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                 type="submit"
               >
-                Submit
+                {{ $t('submit') }}
               </button>
             </div>
             <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
@@ -102,14 +111,9 @@
       </div>
     </form>
   </section>
-  <el-result
-    v-else
-    icon="success"
-    title="Thank you for contacting me!"
-    sub-title="I will get back to you soon"
-  >
+  <el-result v-else icon="success" :title="$t('thank-you')" :sub-title="$t('get-back-soon')">
     <template #extra>
-      <el-button type="primary" @click="resetForm">Back</el-button>
+      <el-button type="primary" @click="resetForm">{{ $t('back') }}</el-button>
     </template>
   </el-result>
 </template>
