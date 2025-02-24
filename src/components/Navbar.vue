@@ -46,7 +46,6 @@
             aria-label="toggle menu"
           >
             <svg
-              v-if="!isOpen"
               xmlns="http://www.w3.org/2000/svg"
               class="w-6 h-6"
               fill="none"
@@ -56,74 +55,76 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
             </svg>
-            <svg
-              v-if="isOpen"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
-      <div
-        x-cloak
-        :class="[isOpen ? 'block' : 'hidden']"
-        class="lg:hidden mt-2"
-      >
+      <!-- Mobile Menu Drawer -->
+      <el-drawer v-model="isOpen" title="Menu" size="75%" :before-close="handleClose">
         <ul class="flex flex-col space-y-4">
-          <li v-for="route in routes" :key="route.name">
-            <router-link
-              :to="route.to"
+          <li v-for="route in routes" :key="route.name" class="cursor-pointer">
+            <div
               class="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+              @click="onRouteClicked(route.to)"
             >
               {{ route.name }}
-            </router-link>
+            </div>
           </li>
         </ul>
 
+        <el-divider class="my-4 dark:border-gray-600">
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Switch Theme</span>
+        </el-divider>
+
         <!-- Dark Mode Toggle for Mobile -->
-        <div class="mt-4 px-4">
+        <div
+          class="w-full flex items-center justify-between mt-4 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
+          <div>{{ darkMode ? 'Dark Mode' : 'Light Mode' }}</div>
           <el-switch
             v-model="darkMode"
             :active-action-icon="Moon"
             :inactive-action-icon="Sunny"
             size="small"
             @change="toggleMode"
+            class="ml-4"
           />
         </div>
-      </div>
+      </el-drawer>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { Sunny, Moon } from '@element-plus/icons-vue';
-import { useModeStore } from '@/stores/modeStore';
+import { ref } from 'vue'
+import { Sunny, Moon } from '@element-plus/icons-vue'
+import { useModeStore } from '@/stores/modeStore'
+import { useRouter } from 'vue-router'
+import { ElDrawer } from 'element-plus'
 
-const modeStore = useModeStore();
-const isOpen = ref(false);
-const darkMode = ref(false);
-
-const toggleMode = () => {
-  modeStore.setMode(darkMode.value);
-};
+const modeStore = useModeStore()
+const isOpen = ref(false)
+const darkMode = ref(false)
+const router = useRouter()
 
 const routes = ref([
   { name: 'Home', to: '/' },
   { name: 'Portfolio', to: '/portfolio' },
   { name: 'Resume', to: '/resume' },
-  { name: 'Contact', to: '/contact' },
-]);
-</script>
+  { name: 'Contact', to: '/contact' }
+])
 
-<style scoped>
-/* Add custom styles if needed */
-</style>
+const toggleMode = () => {
+  modeStore.setMode(darkMode.value)
+}
+
+const onRouteClicked = (route) => {
+  isOpen.value = false
+  router.push(route)
+}
+
+const handleClose = (done) => {
+  isOpen.value = false
+  done()
+}
+</script>
