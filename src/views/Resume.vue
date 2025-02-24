@@ -1,11 +1,9 @@
 <template>
-  <section class="text-gray-600 px-10 py-10 mx-auto body-font">
+  <section class="text-gray-600 dark:text-gray-400 p-4 md:p-8 mx-auto body-font">
     <div class="container mx-auto">
       <!-- Header for Resume -->
       <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold tracking-wide text-indigo-500 uppercase">
-          Resume
-        </h1>
+        <h1 class="text-2xl font-bold tracking-wide text-indigo-500 uppercase">📝 Resume 🧑‍💻</h1>
       </div>
 
       <!-- Experiences Section -->
@@ -17,16 +15,47 @@
           <div
             v-for="exp in experiences"
             :key="exp.id"
-            class="flex flex-col border border-gray-300 rounded-lg p-4 shadow-md bg-white"
+            class="flex flex-col rounded-lg p-4 shadow-sm bg-white dark:bg-gray-800"
           >
-            <h3 class="font-medium text-indigo-600 text-lg mb-1">
+            <h3 class="font-medium text-indigo-600 dark:text-indigo-400 text-lg mb-1">
               {{ exp.company }}
             </h3>
-            <p class="text-sm text-gray-500 italic mb-2">{{ exp.dates }}</p>
-            <h4 class="text-gray-800 font-medium text-sm mb-2">
+            <p class="text-sm text-gray-500 dark:text-gray-300 italic mb-2">{{ exp.dates }}</p>
+            <h4 class="text-gray-800 dark:text-gray-200 font-medium text-sm mb-2">
               {{ exp.title }}
             </h4>
-            <p class="text-gray-600 text-sm" v-html="exp.desc"></p>
+            <p class="text-gray-600 dark:text-gray-400 text-sm" v-html="exp.desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="mt-10">
+        <div class="uppercase tracking-widest text-indigo-500 text-xs font-medium mb-6">
+          Projects
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div
+            v-for="proj in projects"
+            :key="proj.id"
+            class="flex flex-col rounded-lg p-6 shadow-sm transition-shadow bg-white dark:bg-gray-800"
+          >
+            <h3 class="font-semibold text-indigo-600 dark:text-indigo-400 text-lg">
+              {{ proj.name }}
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-300 italic mb-2">{{ proj.type }} app</p>
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span
+                v-for="tag in proj.stack"
+                :key="tag"
+                class="bg-indigo-50 text-indigo-800 dark:bg-indigo-800 dark:text-indigo-200 text-xs font-medium px-2.5 py-1 rounded-full"
+              >
+                {{ tag }}
+              </span>
+            </div>
+            <p class="text-sm text-gray-500 dark:text-gray-300 italic mb-3">{{ proj.dates }}</p>
+            <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed" v-html="proj.desc"></p>
           </div>
         </div>
       </div>
@@ -40,13 +69,13 @@
           <div
             v-for="edu in educations"
             :key="edu.id"
-            class="flex flex-col border border-gray-300 rounded-lg p-4 shadow-md bg-white"
+            class="flex flex-col rounded-lg p-4 shadow-sm bg-white dark:bg-gray-800"
           >
-            <h3 class="font-medium text-indigo-600 text-lg mb-1">
+            <h3 class="font-medium text-indigo-600 dark:text-indigo-400 text-lg mb-1">
               {{ edu.school }}
             </h3>
-            <p class="text-sm text-gray-500 italic mb-2">{{ edu.dates }}</p>
-            <p class="text-gray-800 text-sm">{{ edu.degree }}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-300 italic mb-2">{{ edu.dates }}</p>
+            <p class="text-gray-800 dark:text-gray-200 text-sm">{{ edu.degree }}</p>
           </div>
         </div>
       </div>
@@ -161,20 +190,51 @@ const experiences = ref([
     Collaborated with design and product teams to influence and define technical requirements.`,
     location: 'Agadir, Morocco',
     dates: 'October 2022 - January 2024'
+  }
+])
+
+const projects = ref([
+  {
+    id: 5,
+    type: 'web',
+    stack: ['JavaScript', 'VueJS', 'NuxtJS', 'Pinia', 'I18n', 'PrimeVue', 'TailwindCSS'],
+    name: 'Azora Shop',
+    desc: 'Azora Shop'
   },
   {
-    company: 'Ma3ahid',
-    title: 'Web Developer',
-    desc: 'Developing a school management app with Laravel and Vue.js. Handling student, teacher, timetable, and grading features.',
-    location: 'Agadir, Morocco',
-    dates: 'Mars 2023 - November 2023'
+    id: 6,
+    type: 'mobile',
+    stack: ['JavaScript', 'Ionic', 'Capacitor', 'VueJs', 'Php', 'Laravel', 'MySQL'],
+    name: 'Delivery Man',
+    desc: 'Cross-platform app for delivery personnel in COD business, offering order management, real-time updates, and journey statistics.'
   },
   {
-    company: 'Bimma EWD',
-    title: 'Mobile Developer',
-    desc: 'Created a React Native app for managing BMW automobile electrical schematics.',
-    location: 'Freeance',
-    dates: 'November 2021 - May 2022'
+    id: 1,
+    type: 'web',
+    stack: ['CakePHP', 'MySQL', 'Docker', 'Puppeteer', 'WebSockets', 'Laravel', 'Vue'],
+    name: 'Elevate Guru',
+    desc: 'Online platform for business advisors and entrepreneurs, offering tools for decision-making, training, and collaboration.'
+  },
+  {
+    id: 2,
+    type: 'web',
+    stack: ['JavaScript', 'Vue', 'Php', 'Laravel', 'MySQL'],
+    name: 'Agriwise',
+    desc: 'Farm management system streamlining agricultural processes like employee, inventory, and POS management.'
+  },
+  {
+    id: 3,
+    type: 'web',
+    stack: ['JavaScript', 'Vue', 'Php', 'Laravel', 'MySQL'],
+    name: 'Ma3ahid',
+    desc: 'School management app with timetable system, role-based access, data export, invoicing, and printable documents.'
+  },
+  {
+    id: 4,
+    type: 'mobile',
+    stack: ['JavaScript', 'React Native', 'Php', 'Laravel', 'MySQL'],
+    name: 'Bimma EWD',
+    desc: 'Mobile app for accessing BMW electrical schemas, with search, view, download, and bookmark features.'
   }
 ])
 
