@@ -65,6 +65,11 @@
       "name": "Bimma EWD",
       "desc": "Bimma EWD est une application mobile développée avec JavaScript, React Native, PHP et les frameworks Laravel.",
       "short-desc": "Bimma EWD est une application mobile developpee avec JavaScript, React Native, PHP et les frameworks Laravel."
+    },
+    "scantel": {
+      "name": "Scantel - Scanner de Recharge",
+      "desc": "Scantel est le moyen le plus rapide et le plus intelligent de recharger votre crédit mobile au Maroc. Il utilise la technologie OCR avancée pour scanner le code PIN à 14 chiffres de la carte de recharge, formate automatiquement le code USSD correct (par exemple, *555*Code#) pour les principaux opérateurs (Maroc Telecom, Orange, Inwi) et prend en charge tous les types de recharge (Standard, Internet, SMS). L'application est simple, sécurisée, multilingue et fonctionne à 100% hors ligne.",
+      "short-desc": "Scantel est une application mobile qui utilise un scanner de caméra intelligent (OCR) pour lire et recharger rapidement le crédit mobile marocain (IAM, Orange, Inwi). Il gère le formatage du code USSD et prend en charge tous les types de recharge, éliminant la saisie manuelle du code PIN."
     }
   },
   "experiences-info": {
@@ -93,9 +98,9 @@
       "degree": "Baccalauréat en sciences physiques"
     }
   },
-  "communication" : "Communication",
-  "problem-solving" : "Résolution de problèmes",
-  "time-management" : "Gestion du temps",
-  "teamwork" : "Travail en equipe",
-  "click-on-image-to-open-fullscreen-view" : "Cliquez sur l'image pour ouvrir la vue plein ecran"
+  "communication": "Communication",
+  "problem-solving": "Résolution de problèmes",
+  "time-management": "Gestion du temps",
+  "teamwork": "Travail en equipe",
+  "click-on-image-to-open-fullscreen-view": "Cliquez sur l'image pour ouvrir la vue plein ecran"
 }

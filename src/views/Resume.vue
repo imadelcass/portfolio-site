@@ -202,6 +202,13 @@ const projects = ref([
     stack: ['JavaScript', 'React Native', 'Php', 'Laravel', 'MySQL'],
     name: t('projects-info.bimma-ewd.name'),
     desc: t('projects-info.bimma-ewd.short-desc')
+  },
+  {
+    id: 7,
+    type: 'mobile',
+    stack: ['TypeScript', 'Expo', 'React Native'],
+    name: t('projects-info.scantel.name'),
+    desc: t('projects-info.scantel.short-desc')
   }
 ])
 

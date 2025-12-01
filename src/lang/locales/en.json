@@ -65,6 +65,11 @@
       "name": "Bimma EWD",
       "desc": "Bimma EWD is a mobile application developed using JavaScript, React Native, PHP, and Laravel frameworks.",
       "short-desc": "Bimma EWD is a mobile application developed using JavaScript, React Native, PHP, and Laravel frameworks."
+    },
+    "scantel": {
+      "name": "Scantel - Recharge Scanner",
+      "desc": "Scantel is the fastest and smartest way to top up your mobile credit in Morocco. It uses advanced OCR technology to scan the 14-digit recharge card PIN, automatically formats the correct USSD code (e.g., *555*Code#) for major operators (Maroc Telecom, Orange, Inwi), and supports all recharge types (Standard, Internet, SMS passes). It's simple, secure, multi-language, and works 100% offline.",
+      "short-desc": "Scantel is a mobile app that uses a smart camera scanner (OCR) to quickly read and top up Moroccan mobile credit (IAM, Orange, Inwi). It handles USSD code formatting and supports all recharge types, eliminating manual PIN entry."
     }
   },
   "experiences-info": {

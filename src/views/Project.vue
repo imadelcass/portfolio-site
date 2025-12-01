@@ -117,6 +117,7 @@ import elevateGuru from '@/assets/img/elevateGuru.png'
 import agriwise from '@/assets/img/agriwise.png'
 import maahid from '@/assets/img/maahid.png'
 import azorashop from '@/assets/img/azorashop.png'
+import scantel from '@/assets/img/scantel.png'
 import m1 from '@/assets/img/m1.png'
 import m2 from '@/assets/img/m2.png'
 import m3 from '@/assets/img/m3.png'
@@ -138,6 +139,9 @@ import bimma6 from '@/assets/img/bimma6.png'
 import cod1 from '@/assets/img/cod1.png'
 import cod2 from '@/assets/img/cod2.png'
 import cod3 from '@/assets/img/cod3.png'
+import scantel2 from '@/assets/img/scantel2.jpg'
+import scantel3 from '@/assets/img/scantel3.jpg'
+import scantel4 from '@/assets/img/scantel4.jpg'
 
 const route = useRoute()
 const router = useRouter()
@@ -199,13 +203,24 @@ const projects = ref([
   {
     id: 4,
     type: 'mobile',
-    stack: ['JavaScript', 'React Native', 'Php', 'Laravel', 'MySQL'],
+    stack: ['JavaScript', 'Expo', 'React Native', 'Php', 'Laravel', 'MySQL'],
     name: 'Bimma EWD',
     slug: 'bimma-ewd',
     url: 'https://play.google.com/store/apps/details?id=com.bimma_ewd_v2',
     desc: t('projects-info.bimma-ewd.desc'),
     logo: bimma,
     imgs: [bimma1, bimma2, bimma3, bimma4, bimma5, bimma6]
+  },
+  {
+    id: 5,
+    type: 'mobile',
+    stack: ['TypeScript', 'Expo', 'React Native'],
+    name: 'Scantel',
+    slug: 'scantel',
+    url: 'https://play.google.com/apps/testing/com.imadelcass.rechargescanner',
+    desc: t('projects-info.scantel.desc'),
+    logo: scantel,
+    imgs: [scantel2, scantel3, scantel4]
   }
 ])
 
