@@ -77,7 +77,7 @@ export const contact = {
   location: 'Agadir, Maroc',
   linkedin: 'https://linkedin.com/in/imad-elcass',
   github: 'https://github.com/imadelcass',
-  playStore: 'https://play.google.com/store/apps/developer?id=Imad+El+Cass'
+  playStore: 'https://play.google.com/store/apps/developer?id=Imad+el+cass'
 }
 
 export const stats = [
