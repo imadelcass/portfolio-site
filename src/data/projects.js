@@ -159,7 +159,7 @@ export const projects = [
     desc: 'projects-info.ma3ahid.desc',
     body: 'projects-info.ma3ahid.body',
     stack: ['Laravel', 'Vue.js', 'MySQL', 'REST API'],
-    url: 'https://ma3ahid.gismait.com/',
+    url: 'https://ma3ahid.ma/',
     logo: maahid,
     imgs: [m1, m2, m3, m4, m5],
     featured: true
