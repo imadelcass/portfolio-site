@@ -1,106 +1,191 @@
 {
-  "home": "Accueil",
-  "portfolio": "Portfolio",
-  "resume": "Résumé",
-  "contact": "Contact",
-  "experiences": "Expériences",
-  "projects": "Projets",
-  "education": "Éducation",
-  "soft-skills": "Compétences Douces",
-  "coding-skills": "Compétences Techniques",
-  "download-resume": "Télécharger le CV",
-  "contact-me": "Contactez-moi",
-  "contact-description": "N'hésitez pas à me contacter pour toute question ou assistance dont vous pourriez avoir besoin - je suis là pour vous aider !",
-  "name": "Nom",
-  "email": "E-mail",
-  "message": "Message",
-  "submit": "Soumettre",
-  "thank-you": "Merci de m'avoir contacté !",
-  "get-back-soon": "Je vous répondrai bientôt",
-  "back": "Retour",
-  "project": "Projet",
-  "visit-project": "Visiter le projet",
-  "about-project": "À propos du projet",
-  "technology-stack": "Pile technologique",
-  "gallery": "Galerie",
-  "profile-alt": "Imad El Cass",
-  "greeting": "Salut !",
-  "bio-intro": "Je suis",
-  "bio-description": "un technicien en développement informatique spécialisé dans le développement web et mobile. Basé au Maroc, j'ai mené à bien de nombreux projets, en visant toujours l'excellence. Si vous cherchez un développeur pour donner vie à vos idées, je suis là pour vous aider. Collaborons sur votre prochain projet et faisons-en le meilleur !",
-  "linkedin-label": "Profil LinkedIn",
-  "github-label": "Profil GitHub",
-  "settings": "Paramètres",
-  "dark-mode": "Mode nuit",
-  "language": "Langue",
-  "portfolio-description": "Explorez les projets que j'ai accompli en tant que developpeur web et mobile.",
-  "mobile-apps": "Applications mobiles",
-  "web-apps": "Applications web",
+  "meta": {
+    "title": "Imad El Cass — Développeur Full-Stack & Mobile",
+    "description": "Développeur Full-Stack Laravel / Vue.js et mobile React Native. Basé à Agadir, Maroc. 5 applications publiées sur Google Play."
+  },
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "work": "Réalisations",
+    "experience": "Parcours",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "hero": {
+    "available": "Disponible pour de nouveaux projets",
+    "role": "Développeur Full-Stack & Mobile",
+    "tagline": "Je conçois des APIs REST avec Laravel, les interfaces Vue.js qui les consomment, et des applications mobiles React Native publiées sur Google Play.",
+    "cta-work": "Voir mes réalisations",
+    "cta-cv": "Télécharger le CV",
+    "scroll": "Découvrir"
+  },
+  "stats": {
+    "years": "ans d’expérience",
+    "apps": "apps sur Google Play",
+    "projects": "projets livrés"
+  },
+  "about": {
+    "label": "À propos",
+    "title": "Du schéma de base de données à l’écran du téléphone",
+    "p1": "Je suis développeur Full-Stack basé à Agadir, avec plus de trois ans d’expérience sur la stack Laravel / Vue.js. Mon travail commence généralement par la modélisation : comprendre le métier, le traduire en schéma relationnel, puis construire l’API REST qui l’expose proprement.",
+    "p2": "Côté interface, je consomme ces APIs avec Vue.js et, pour le mobile, avec React Native et Expo — cinq applications que j’ai développées sont aujourd’hui publiées sur Google Play. J’ai travaillé en remote pour des équipes au Canada et au Maroc, en Agile, avec les équipes produit et design.",
+    "p3": "J’intègre le développement assisté par IA dans mon flux quotidien — génération, revue et refactoring — pour livrer plus vite sans sacrifier la lisibilité du code.",
+    "location": "Agadir, Maroc · Ouvert au remote"
+  },
+  "skills": {
+    "label": "Compétences",
+    "title": "La stack que j’utilise au quotidien",
+    "backend": "Backend & APIs",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "data": "Bases de données",
+    "tools": "Outils & Méthodes"
+  },
+  "work": {
+    "label": "Réalisations",
+    "title": "Projets & applications",
+    "subtitle": "Applications mobiles publiées et plateformes web livrées en production.",
+    "filter-all": "Tout",
+    "filter-mobile": "Applications mobiles",
+    "filter-web": "Projets web",
+    "view": "Voir le projet",
+    "live": "Voir en ligne",
+    "play-store": "Google Play",
+    "empty": "Aucun projet dans cette catégorie."
+  },
+  "project": {
+    "back": "Retour aux réalisations",
+    "about": "À propos du projet",
+    "stack": "Stack technique",
+    "gallery": "Aperçu",
+    "visit": "Visiter le projet",
+    "play": "Télécharger sur Google Play",
+    "not-found": "Projet introuvable."
+  },
+  "experience": {
+    "label": "Parcours",
+    "title": "Expérience professionnelle",
+    "education-title": "Formation",
+    "languages-title": "Langues",
+    "yadag": {
+      "role": "Responsable Technique — Team Lead IT",
+      "b1": "Contribution aux décisions d’architecture technique et à l’organisation des modules backend dans un environnement 100 % distant.",
+      "b2": "Supervision des bonnes pratiques sur la stack Laravel et Vue.js : structure du code, validation métier, sécurité et maintenabilité.",
+      "b3": "Coordination avec les équipes produit, design et développement pour traduire les besoins en solutions techniques cohérentes."
+    },
+    "city": {
+      "role": "Développeur Full-Stack",
+      "b1": "Développement de Z-Reparator, CRM interne inspiré de Zoho CRM, avec Laravel côté API et Vue.js côté interface.",
+      "b2": "Conception des schémas MySQL, migrations, relations entre entités, contraintes et optimisation des requêtes.",
+      "b3": "Module d’automatisation de workflows avec conditions, actions et Observers Laravel pour garantir la cohérence métier."
+    },
+    "brainbytes": {
+      "role": "Développeur Web",
+      "b1": "Refactoring d’une application CakePHP / MySQL existante et optimisation des performances backend.",
+      "b2": "Intégration de WebSockets pour le temps réel et export PDF via Puppeteer avec gestion de file d’attente.",
+      "b3": "Pilotage d’une migration progressive vers Laravel / Vue.js pour améliorer la maintenabilité."
+    },
+    "wise": {
+      "role": "Développeur Web",
+      "b1": "Développement backend de l’application Agriwise avec Laravel : architecture MVC, règles métier et APIs REST.",
+      "b2": "Conception et optimisation des bases MySQL : tables relationnelles, migrations, requêtes complexes et exports de rapports.",
+      "b3": "Développement et documentation d’APIs RESTful pour l’intégration tierce, en appliquant les standards de sécurité."
+    }
+  },
+  "education": {
+    "ista-dev": "Technicien Spécialisé en Développement Informatique",
+    "ista-log": "TS Responsable d’Exploitation Logistique",
+    "bac": "Baccalauréat — Sciences Physiques"
+  },
+  "languages": {
+    "ar": "Arabe",
+    "fr": "Français",
+    "en": "Anglais",
+    "native": "Langue maternelle",
+    "fluent": "Courant"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Parlons de votre projet",
+    "subtitle": "Une idée, un poste à pourvoir ou une question technique ? Écrivez-moi, je réponds sous 24 h.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "name-ph": "Votre nom",
+    "email-ph": "vous@exemple.com",
+    "message-ph": "Parlez-moi de votre projet…",
+    "submit": "Envoyer le message",
+    "sending": "Envoi en cours…",
+    "success-title": "Message envoyé, merci !",
+    "success-body": "Je vous réponds très rapidement.",
+    "error": "L’envoi a échoué. Réessayez ou écrivez directement à imadelcass@gmail.com.",
+    "required": "Ce champ est obligatoire.",
+    "invalid-email": "Adresse email invalide.",
+    "or-direct": "Ou directement :"
+  },
+  "footer": {
+    "built": "Conçu et développé par Imad El Cass",
+    "stack": "Vue 3 · Vite · Tailwind CSS",
+    "rights": "Tous droits réservés."
+  },
+  "a11y": {
+    "linkedin": "Profil LinkedIn",
+    "github": "Profil GitHub",
+    "play": "Applications sur Google Play",
+    "theme": "Changer de thème",
+    "lang": "Changer de langue",
+    "profile-alt": "Portrait d’Imad El Cass"
+  },
   "projects-info": {
-    "azora-shop": {
-      "name": "Azora Shop",
-      "desc": "Azora Shop est une plateforme e-commerce moderne conçue pour offrir une expérience d'achat fluide.",
-      "short-desc": "Azora Shop est une plateforme e-commerce moderne conçue pour offrir une experiencia d'achat fluide."
+    "rami-marocain": {
+      "tagline": "Jeu de cartes marocain contre une IA",
+      "desc": "Le Rami marocain en application native : parties contre une IA, tierces, suites et jokers, sans inscription.",
+      "body": "Rami Marocain porte le jeu de cartes traditionnel marocain sur mobile. Le cœur du projet est la logique de jeu : validation des combinaisons (tierces, suites, jokers), gestion des tours et moteur d’adversaire artificiel jouant une partie crédible. L’interface est pensée pour le tactile, en mode paysage, avec un rendu fluide des cartes et de leurs animations. L’application est gratuite et jouable immédiatement, sans compte ni connexion."
     },
-    "cod-delivery-man": {
-      "name": "COD Delivery Man",
-      "desc": "COD Delivery Man est une application mobile multiplateforme conçue pour rationaliser les opérations du personnel de livraison dans le commerce du paiement à la livraison (COD).",
-      "short-desc": "COD Delivery Man est une application mobile multiplateforme conçue pour rationaliser les opérations du personnel de livraison dans le commerce du paiement à la livraison (COD)."
+    "tidenow": {
+      "tagline": "Horaires et coefficients de marée",
+      "desc": "Consultation des marées par station : courbes horaires, pleines et basses mers, phases lunaires et stations favorites.",
+      "body": "TideNow donne l’état de la marée pour une station donnée, n’importe où dans le monde. L’application intègre des données de stations officielles, trace la courbe de marée sur la journée avec le niveau courant, et liste les pleines et basses mers à venir. Une carte permet de parcourir les stations disponibles par région, avec un système de favoris pour retrouver les siennes. Un module dédié affiche les phases de la lune, le lever et le coucher du soleil — utile pour la pêche et la navigation."
     },
-    "elevateguru": {
-      "name": "Elevate Guru",
-      "desc": "ElevateGuru.com est une plateforme en ligne conçue pour les conseillers en entreprise et les entrepreneurs, améliorant le flux de travail et la collaboration.",
-      "short-desc": "ElevateGuru.com est une plateforme en ligne conçue pour les conseillers en entreprise et les entrepreneurs, améliorant le flux de travail et la collaboration."
-    },
-    "agriwise": {
-      "name": "Agriwise",
-      "desc": "Agriwise est un système de gestion agricole complet qui rationalise divers processus agricoles.",
-      "short-desc": "Agriwise est un système de gestion agricole complet qui rationalise divers processus agricoles."
-    },
-    "ma3ahid": {
-      "name": "Ma3ahid",
-      "desc": "Ma3ahid est une application web polyvalente conçue pour la gestion scolaire, répondant aux besoins des stagiaires, formateurs et tuteurs.",
-      "short-desc": "Ma3ahid est une application web polyvalente conçue pour la gestion scolaire,/respondant aux besoins des stagiaires, formateurs et tuteurs."
+    "parkpin": {
+      "tagline": "Retrouver sa voiture, en un tap",
+      "desc": "Enregistrement de la place de stationnement par GPS, navigation piétonne de retour et rappel avant expiration.",
+      "body": "ParkPin résout un problème simple : où est ma voiture. Un seul appui enregistre la position GPS exacte du stationnement, sans saisie. L’application affiche ensuite la distance, la direction et un itinéraire piéton pour y revenir. On peut ajouter l’adresse, l’étage ou la place dans un parking couvert, joindre une photo du lieu, et programmer un rappel avant l’expiration du temps de stationnement. Elle gère plusieurs véhicules et conserve un historique des stationnements précédents."
     },
     "bimma-ewd": {
-      "name": "Bimma EWD",
-      "desc": "Bimma EWD est une application mobile développée avec JavaScript, React Native, PHP et les frameworks Laravel.",
-      "short-desc": "Bimma EWD est une application mobile developpee avec JavaScript, React Native, PHP et les frameworks Laravel."
+      "tagline": "Application mobile publiée sur Android et iOS",
+      "desc": "Application mobile publiée sur Google Play et l’App Store : recherche, favoris et consultation hors ligne.",
+      "body": "Bimma EWD est une application mobile React Native publiée sur les deux stores. Elle propose la recherche dans un catalogue, la mise en favoris et la consultation hors ligne des contenus déjà chargés. Le backend Laravel expose une API REST consommée par l’application, avec une attention particulière portée à la performance perçue et à l’expérience utilisateur sur Android comme sur iOS."
     },
     "scantel": {
-      "name": "Scantel - Scanner de Recharge",
-      "desc": "Scantel est le moyen le plus rapide et le plus intelligent de recharger votre crédit mobile au Maroc. Il utilise la technologie OCR avancée pour scanner le code PIN à 14 chiffres de la carte de recharge, formate automatiquement le code USSD correct (par exemple, *555*Code#) pour les principaux opérateurs (Maroc Telecom, Orange, Inwi) et prend en charge tous les types de recharge (Standard, Internet, SMS). L'application est simple, sécurisée, multilingue et fonctionne à 100% hors ligne.",
-      "short-desc": "Scantel est une application mobile qui utilise un scanner de caméra intelligent (OCR) pour lire et recharger rapidement le crédit mobile marocain (IAM, Orange, Inwi). Il gère le formatage du code USSD et prend en charge tous les types de recharge, éliminant la saisie manuelle du code PIN."
-    }
-  },
-  "experiences-info": {
-    "brainbytes": {
-      "title": "Developpeur Web",
-      "dates": "Février 2024 - Septembre 2024",
-      "desc": "<strong>1. Finalisation et amélioration de l'application existante :</strong> Travaillé avec l'équipe pour finaliser la version 1 d'une application utilisant CakePHP et MySQL, en corrigeant les problèmes et en effectuant des ajustements pour répondre aux besoins des utilisateurs.<br><br><strong>2. Optimisation des fonctionnalités d'exportation :</strong> Mise en place d'un système de file d'attente pour gérer l'exportation de données PDF avec Puppeteer, améliorant ainsi les performances et la stabilité de l'application.<br><br><strong>3. Configuration de Docker et séparation des modules :</strong> Configuré Docker pour faciliter le déploiement de l'application et isolé différents modules dans des conteneurs, améliorant ainsi la portabilité et la gestion des dépendances.<br><br><strong>4. Intégration des WebSockets :</strong> Ajout de WebSockets pour la communication en temps réel entre le frontend et le backend, permettant le suivi du statut de téléchargement des fichiers et la mise à jour instantanée des utilisateurs.<br><br><strong>5. Migration vers Laravel et Vue.js :</strong> Refonte de l'application en utilisant Laravel pour le backend et Vue.js pour le frontend afin de mieux séparer les responsabilités et d'améliorer la maintenabilité et l'évolutivité du système.<br><br><strong>6. Optimisation des bases de données :</strong> Refonte des migrations de base de données pour optimiser les performances, réduire les temps de requête et améliorer la gestion des données pour une expérience utilisateur plus fluide."
+      "tagline": "Scan de codes de recharge par caméra",
+      "desc": "Lecture automatique des codes de recharge par OCR, avec un parcours simplifié pour les utilisateurs non techniques.",
+      "body": "Recharge Scanner supprime la saisie manuelle des codes de recharge téléphonique. La caméra détecte et lit le code automatiquement par OCR, sans que l’utilisateur ait à cadrer précisément ou à recopier une suite de chiffres. Le travail a surtout porté sur la gestion fine des permissions Android, la fiabilité de la détection dans des conditions d’éclairage variables, et un parcours réduit au strict minimum pour des utilisateurs non techniques."
     },
-    "wise-systems": {
-      "title": "Developpeur Web",
-      "dates": "Octobre 2022 - Janvier 2024",
-      "desc": "<strong>1. Développement d'application web :</strong> Création d'une application web robuste nommée Agriwise avec un design serveur sous Laravel et un design client sous Vue.js. Mise en place d'une architecture MVC bien conçue avec une séparation claire des préoccupations et un code propre pour une maintenance facile.<br><br><strong>2. Gestion de base de données :</strong> Conception et optimisation d'une grande base de données relationnelle sous MySQL : schémas, optimisation et migration des bases de données. Développement de fonctionnalités d'exportation de rapports pour analyser les données et fournir des informations aux utilisateurs.<br><br><strong>3. Tests et débogage :</strong> Tests et débogage des API RESTful avec Insomnia pour garantir des services web cohérents et performants. Documentation des API pour une intégration logicielle efficace, réduisant ainsi les coûts de développement et améliorant l'expérience utilisateur.<br><br><strong>4. Gestion du contrôle de version et du code source :</strong> Utilisation de Git pour le contrôle de version du code source et collaboration avec une équipe sur GitHub en suivant les meilleures pratiques de branchement et de fusion. Réalisation de revues de code pour garantir la qualité du code.<br><br><strong>5. Méthodologie Agile :</strong> Travail en équipe Agile, participation aux réunions quotidiennes pour discuter des projets d'équipe et adaptation des plans selon les besoins. Collaboration active avec d'autres développeurs pour résoudre les problèmes techniques et concevoir, coder et déployer de manière collaborative et responsable.<br><br><strong>6. Collaboration et support inter-équipes :</strong> Collaboration avec les équipes de design et de produit pour influencer et définir les exigences techniques."
-    }
-  },
-  "educations": {
-    "institute-agadir": {
-      "school": "Institut Spécialisé de Technologie Appliquée - Agadir",
-      "location": "Agadir, Maroc",
-      "dates": "Octobre 2020 - Juin 2022",
-      "degree": "Technicien spécialisé en développement informatique"
+    "cod-delivery-man": {
+      "tagline": "Application livreur pour le paiement à la livraison",
+      "desc": "Gestion des commandes, des statuts et de la collecte des paiements, synchronisée avec un backend Laravel.",
+      "body": "COD Delivery Man est l’application des livreurs pour un service de paiement à la livraison. Elle liste les commandes assignées, permet de faire évoluer leur statut au fil de la tournée et d’enregistrer la collecte des paiements. La synchronisation passe par une API REST Laravel, avec une base MySQL côté serveur. L’application est construite avec Ionic et Capacitor à partir d’une base Vue.js."
     },
-    "essaada-agadir": {
-      "school": "ESSAADA - Agadir",
-      "location": "Agadir, Maroc",
-      "dates": "Octobre 2015 - Juin 2016",
-      "degree": "Baccalauréat en sciences physiques"
+    "elevateguru": {
+      "tagline": "Plateforme SaaS de conseil aux entrepreneurs",
+      "desc": "Plateforme SaaS de gestion de projets et de collaboration entre entrepreneurs et conseillers d’affaires.",
+      "body": "ElevateGuru met en relation des entrepreneurs et des conseillers d’affaires autour d’un espace de travail commun : suivi de projets, parcours de formation, mesure d’impact et aide à la décision. Le travail a couvert le refactoring d’une base CakePHP existante, l’optimisation des performances backend, l’intégration de WebSockets pour les échanges en temps réel, la génération de rapports PDF via Puppeteer avec file d’attente, ainsi que la conteneurisation Docker et une migration progressive vers Laravel / Vue.js."
+    },
+    "ma3ahid": {
+      "tagline": "Gestion d’établissements scolaires",
+      "desc": "Inscriptions, paiements, rôles et permissions, planification et facturation, sur un schéma relationnel orienté métier.",
+      "body": "Ma3ahid est une application de gestion pour établissements de formation. Elle couvre les inscriptions des étudiants, le suivi des paiements et la facturation, la planification des sessions, et un système de rôles et permissions distinguant administration, enseignants et personnel. Le cœur du projet est le schéma relationnel : traduire des règles de gestion réelles en contraintes de base de données et en validations métier côté Laravel."
+    },
+    "agriwise": {
+      "tagline": "Système de gestion pour le secteur agricole",
+      "desc": "Application métier de suivi agricole : données de terrain, requêtes complexes et exports de rapports.",
+      "body": "Agriwise est une application web de gestion destinée au secteur agricole. J’y ai développé la partie backend en Laravel — architecture MVC, règles métier et APIs REST documentées pour l’intégration tierce — ainsi que la conception et l’optimisation de la base MySQL : tables relationnelles, migrations, requêtes complexes et exports de rapports d’exploitation."
+    },
+    "azora-shop": {
+      "tagline": "Plateforme e-commerce Nuxt.js",
+      "desc": "Plateforme e-commerce moderne conçue pour une expérience d’achat fluide, multilingue et responsive.",
+      "body": "Azora Shop est une plateforme e-commerce construite avec Nuxt.js. L’application gère le catalogue produits, la navigation par catégories et le panier, avec une gestion d’état centralisée via Pinia et une interface multilingue via i18n. Le rendu s’appuie sur PrimeVue et Tailwind CSS pour une interface cohérente et responsive."
     }
-  },
-  "communication": "Communication",
-  "problem-solving": "Résolution de problèmes",
-  "time-management": "Gestion du temps",
-  "teamwork": "Travail en equipe",
-  "click-on-image-to-open-fullscreen-view": "Cliquez sur l'image pour ouvrir la vue plein ecran"
+  }
 }

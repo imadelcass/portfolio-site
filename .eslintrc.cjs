@@ -10,5 +10,15 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
-  }
+  },
+  overrides: [
+    {
+      files: ["*.config.js", "postcss.config.js", "tailwind.config.js"],
+      env: { node: true }
+    },
+    {
+      files: ["src/views/**/*.vue"],
+      rules: { "vue/multi-word-component-names": "off" }
+    }
+  ]
 }

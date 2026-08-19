@@ -1,13 +1,10 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import i18n from '@/lang'
-import ElementPlus from 'element-plus'
 import VueGtag from 'vue-gtag'
+
+import i18n from '@/lang'
 import App from './App.vue'
 import router from './router'
-
-import 'element-plus/dist/index.css'
-import 'element-plus/theme-chalk/dark/css-vars.css'
 import './assets/main.css'
 
 const app = createApp(App)
@@ -15,7 +12,7 @@ const app = createApp(App)
 app.use(
   VueGtag,
   {
-    appName: 'My application',
+    appName: 'imadelcass.netlify.app',
     pageTrackerScreenviewEnabled: true,
     config: { id: 'G-0TJZKY5TNF' }
   },
@@ -24,7 +21,6 @@ app.use(
 
 app.use(i18n)
 app.use(createPinia())
-app.use(ElementPlus)
 app.use(router)
 
 app.mount('#app')

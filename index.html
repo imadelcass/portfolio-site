@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta name="theme-color" content="#0f1d2e" />
+
+    <title>Imad El Cass — Développeur Full-Stack &amp; Mobile</title>
+    <meta
+      name="description"
+      content="Développeur Full-Stack Laravel / Vue.js et mobile React Native. Basé à Agadir, Maroc. 5 applications publiées sur Google Play."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Imad El Cass — Développeur Full-Stack &amp; Mobile" />
+    <meta
+      property="og:description"
+      content="APIs REST Laravel, interfaces Vue.js et applications React Native publiées sur Google Play."
+    />
+    <meta property="og:url" content="https://imadelcass.netlify.app/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Set the theme before first paint so there is no flash of the wrong colours.
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
   </head>
-  <body>  
+  <body>
     <div id="app"></div>
     <script type="module" src="./src/main.js"></script>
   </body>
